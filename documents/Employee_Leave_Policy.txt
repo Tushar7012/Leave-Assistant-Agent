@@ -1,0 +1,20 @@
+# Employee Leave Policy
+
+## 1. Sick Leave (SL)
+- **Entitlement**: Employees are entitled to 12 days of Sick Leave per year.
+- **Accrual**: 1 day per month.
+- **Carry Over**: Up to 5 days can be carried over to the next year.
+- **Proof**: Medical certificate required for more than 2 consecutive days.
+
+## 2. Casual Leave (CL)
+- **Entitlement**: 12 days of Casual Leave per year.
+- **Booking**: Must be applied for at least 3 days in advance.
+- **Duration**: Maximum 3 consecutive days.
+
+## 3. Remote Work (WFH)
+- **Policy**: Up to 2 days of remote work per week with manager approval.
+- **Core Hours**: Available from 10 AM to 4 PM.
+
+## 4. Holidays
+- Standard public holidays are observed.
+- Optional holidays: 2 per year.
