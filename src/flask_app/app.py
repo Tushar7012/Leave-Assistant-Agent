@@ -9,8 +9,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'
 from src.agents.graph import graph
 
 app = Flask(__name__)
-# Enable CORS for Next.js frontend
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://127.0.0.1:3000"]}})
+# Enable CORS for frontend (allow all origins for production flexibility)
+CORS(app)
+
 
 @app.route("/")
 def home():
