@@ -15,7 +15,12 @@ from src.agents.tools import fetch_employee_data, policy_search_tool, send_email
 load_dotenv()
 
 # --- 1. LLM Setup ---
-llm = ChatGroq(temperature=0, model_name="llama-3.1-8b-instant")
+# Explicitly get API key from environment for Render.com compatibility
+groq_api_key = os.environ.get("GROQ_API_KEY")
+if not groq_api_key:
+    raise ValueError("GROQ_API_KEY environment variable is not set!")
+
+llm = ChatGroq(temperature=0, model_name="llama-3.1-8b-instant", api_key=groq_api_key)
 
 # --- 2. Supervisor Agent ---
 members = ["DataAgent", "PolicyAgent", "EmailAgent"]
