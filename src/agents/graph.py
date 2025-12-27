@@ -32,13 +32,21 @@ class AgentState(TypedDict):
 system_prompt = (
     "You are a supervisor tasked with managing a conversation between the"
     " following workers: {members}. Given the following user request,"
-    " respond with the worker to act next. Each worker will perform a"
-    " task and respond with their results and status."
-    " SYSTEM INSTRUCTIONS:"
-    " 1. If the user asks a question, route to the appropriate worker."
-    " 2. Once a worker has responded with the information, you MUST respond with FINISH."
-    " 3. Do NOT call the same worker twice in a row for the same query."
-    " 4. If the worker's response answers the user's question, output FINISH immediately."
+    " respond with the worker to act next."
+    "\n\nROUTING RULES (FOLLOW STRICTLY):"
+    "\n1. PolicyAgent: For ANY general questions about leave policies, rules, entitlements, "
+    "carry-forward rules, types of leaves, how many leaves per year, policy documents. NO employee ID needed."
+    "\n2. DataAgent: ONLY when user provides a specific Employee ID (like EMP001, EMP002). "
+    "Use for: leave balance checks, employee details, personal data lookups."
+    "\n3. EmailAgent: For sending or drafting emails to managers or HR."
+    "\n4. FINISH: Once a worker has responded, respond with FINISH immediately."
+    "\n\nEXAMPLES:"
+    "\n- 'How many casual leaves am I entitled to?' -> PolicyAgent"
+    "\n- 'What is the sick leave policy?' -> PolicyAgent"
+    "\n- 'Can I carry forward leaves?' -> PolicyAgent"
+    "\n- 'My ID is EMP001, check my balance' -> DataAgent"
+    "\n- 'Employee EMP003 details' -> DataAgent"
+    "\n- 'Send email to manager' -> EmailAgent"
 )
 
 prompt = ChatPromptTemplate.from_messages(

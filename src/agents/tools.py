@@ -10,6 +10,10 @@ from langchain_text_splitters import CharacterTextSplitter
 from langchain_core.tools import tool
 
 # --- 1. Fake Database ---
+# Standard company emails for managers and HR
+MANAGER_EMAIL = "arjun.verma@example.com"  # Arjun Verma - Senior Engineer/Team Lead
+HR_EMAIL = "priya.singh@example.com"  # Priya Singh - HR Manager
+
 MOCK_DB = {
     "EMP001": {"name": "Raj Sharma", "role": "Engineer", "email": "raj.sharma@example.com", "dept": "IT", "salary": 50000, "hire_date": "2020-01-15", "leaves": {"sick": 8, "casual": 7, "annual": 12}},
     "EMP002": {"name": "Priya Singh", "role": "HR Manager", "email": "priya.singh@example.com", "dept": "HR", "salary": 45000, "hire_date": "2019-03-22", "leaves": {"sick": 10, "casual": 9, "annual": 15}},
